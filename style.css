@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 body {
   margin: 0;
@@ -22,6 +22,8 @@ header {
 }
 header .header-logo {
   width: 50%;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 .section_1 {
@@ -44,8 +46,10 @@ header .header-logo {
 }
 .section_1 .titre-accueil {
   font-size: 1.5rem;
-  font-weight: bolder;
+  font-weight: bold;
   text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .section_1 .paragraphe-accueil {
   text-align: center;
@@ -54,8 +58,12 @@ header .header-logo {
   display: block;
   margin: auto;
   border-radius: 30px;
-  padding: 10px 0px;
+  padding: 12px 0px;
   width: 50%;
+  color: white;
+  font-size: 0.9rem;
+  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  border: transparent;
 }
 
 .section_2 {
@@ -66,18 +74,128 @@ header .header-logo {
   width: 100%;
   height: 400px;
 }
+.section_2 .titre-section {
+  margin-left: 20px;
+}
 .section_2 .btn {
   display: flex;
   flex-direction: row;
-  align-content: space-around;
-  justify-content: space-around;
-  border: transparent solid 2px;
-  border-radius: 15px 15px 15px 15px;
+  align-items: baseline;
+  border: none;
+  border-radius: 15px;
   padding: 10px;
+  font-size: 1rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  z-index: 1;
+  position: relative;
+  box-shadow: 2px 2px 10px 2px gainsboro;
+}
+.section_2 .btn:hover::after {
+  opacity: 1;
+}
+.section_2 .btn:hover i {
+  color: #9356DC;
+}
+.section_2 .btn::after {
+  content: "";
+  position: absolute;
+  border-radius: 15px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ece1f9;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+.section_2 .btn .btn-numero {
+  color: white;
+  height: 15px;
+  width: 15px;
+  border: 5px solid transparent;
+  border-radius: 50%;
+  background-color: #9356DC;
+  margin-left: -25px;
+  margin-right: 20px;
+}
+.section_2 .btn .paragraphe-section_2 {
+  margin-left: 20px;
 }
 
 .section_3 {
+  background-color: #f2f2f2;
   width: 100%;
+  padding-bottom: 40px;
+}
+.section_3 .titre-section {
+  margin-left: 20px;
+}
+.section_3 .box {
+  border: transparent solid 2px;
+  border-radius: 30px;
+  width: 320px;
+  height: 250px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.section_3 .box .box-photo {
+  width: 100%;
+  height: 180px;
+  border-radius: 25px 25px 0 0;
+  object-fit: cover;
+}
+.section_3 .box .box-description {
+  background-color: white;
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+}
+.section_3 .box .box-description .box-text {
+  font-size: 0.8rem;
+  padding-left: 10px;
+}
+.section_3 .box .box-description .box-text h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.section_3 .box .box-description .box-text p {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+.section_3 .box .box-description .heart {
+  padding-top: 10px;
+  padding-right: 30px;
+  font-size: 1.5rem;
+}
+
+footer {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #3c3c3c;
+  color: white;
+}
+footer .footer-logo {
+  margin-left: 30px;
+  color: white;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 100;
+}
+footer .ul-icon {
+  margin-left: 30px;
+  padding-left: 0;
+}
+footer .ul-icon li {
+  line-height: 25px;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
