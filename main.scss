@@ -15,6 +15,93 @@ $gray-medium:rgba(230,230,230);
 @mixin box-shadow-hover {
     box-shadow: 3px 3px 10px 3px gray;
 }
+.loader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color:#f2f2f2, $alpha: 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: transi 3s ;
+    visibility: hidden;
+    .lettre{
+        color: #484848;
+        font-size: 4rem;
+        font-weight: bolder;
+        font-family: 'Shrikhand', sans-serif;
+        letter-spacing: 15px;
+        margin-bottom: 150px;
+        animation: loading 1.2s 0.5s linear infinite ;
+        
+
+     }
+    
+}
+
+    
+
+@keyframes transi {
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    40%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+        
+    }
+}
+
+
+@keyframes loading {
+    0%{
+        color: $color-primary;
+        text-shadow: 0 0 7px $color-primary;
+       
+    }
+    90%{
+        color: #484848;
+        text-shadow: none;
+
+    }
+    100%{
+        color: $color-secondary;
+        text-shadow: 0 0 7px $color-secondary;
+        
+        
+    }
+}
+
+
+.lettre:nth-child(1){
+    animation-delay: 0.1s;
+}
+.lettre:nth-child(2){
+    animation-delay: 0.2s;
+}
+.lettre:nth-child(3){
+    animation-delay: 0.3s;
+}
+.lettre:nth-child(4){
+    animation-delay: 0.4s;
+}
+.lettre:nth-child(5){
+    animation-delay: 0.5s;
+}
+.lettre:nth-child(6){
+    animation-delay: 0.6s;
+}
+.lettre:nth-child(7){
+    animation-delay: 0.7s;
+}
 
 body {
     margin: 0;
@@ -27,6 +114,7 @@ li {
 }
 a {
     text-decoration: none;
+    
 }
 header {
     width: 100%;
@@ -37,6 +125,9 @@ header {
         width: 50%;
         margin-top: 15px;
         margin-bottom: 5px;
+        @media (min-width:1200px) {
+            width: 30%;
+        }
         
     }    
 }
@@ -46,12 +137,20 @@ header {
 .section_1 {
 
     width: 100%;
+
+    
     
 .aside-section_1{
 
     background-color:$gray-light ;
     padding-top: 20px;
     padding-bottom: 40px;
+    @media (min-width:1200px) {
+        border: solid transparent;
+        border-radius: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
     .localisation {
@@ -68,6 +167,9 @@ header {
             margin-top: 20px;
             border-radius: 10px;
 
+        }
+        @media (min-width:1200px) {
+            width: 30%;
         }
 
 
@@ -117,6 +219,14 @@ header {
         border: transparent;
         @include box-shadow-dark;
         transition: all .5s;
+        @media (min-width:1020px) {
+            width: 30%;
+   
+        }
+        @media (min-width:1200px) {
+           width: 20%; 
+        }
+
         
         &:hover{
             opacity: 0.85;
@@ -134,6 +244,15 @@ header {
      width: 100%;
      margin-bottom: 40px;
 
+     .titre-section_2{
+        margin-left: 20px;
+        margin-bottom: 0;
+        @media (min-width:1200px) {
+            text-align: center;
+            font-size: 1.7rem;
+        }
+    } 
+
      .aside-section_2{
         width: 100%;
         margin-top: 30px;
@@ -146,11 +265,7 @@ header {
          }
      }
 
-     .titre-section{
-         margin-left: 20px;
-         margin-bottom: 0px;
-    
-     }
+     
 
      .btn{
          display: flex;
@@ -173,7 +288,10 @@ header {
              margin-bottom: 40px;
              margin-top: 40px;
          }
-
+         @media (min-width:1200px) {
+             width: 29%;
+         }
+        
          &:hover{
              &::after{
                  opacity: 1;
@@ -190,7 +308,7 @@ header {
              right: 0;
              bottom: 0;
              left: 0;
-             background-color: lighten($color-primary, 33)  ;
+             background-color: lighten($color-primary, 33) ;
              opacity: 0;
              z-index: -1;
              transition: opacity 250ms;
@@ -222,12 +340,32 @@ header {
 
     
     background-color: $gray-light;
-    width: 100%;
     padding-bottom: 40px;
     padding-top: 30px;
     display: flex;
     flex-direction: column;
     flex-wrap:wrap ;
+
+    @media (min-width:1200px) {
+        margin-left: 20px;
+        margin-right: 20px;
+        border: solid transparent;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .titre-section_3{
+        margin-left: 20px;
+        @media (min-width:1200px) {
+            text-align: center;
+            font-size: 1.7rem;
+            margin-bottom: 40px;
+            
+        }
+    } 
+
+   
 
     .aside-section_3{
         @media (min-width:760px) {
@@ -237,18 +375,14 @@ header {
             justify-content: center;
          }
     }
-   
-
-
-    .titre-section{
-        margin-left: 20px;
     
-    }
+   
 }
+
 
     .box{
         
-        border:transparent solid 2px;
+        border:transparent solid ;
         border-radius: 30px;
         height: 250px;
         margin-left: 20px;
@@ -257,17 +391,29 @@ header {
         display: flex;
         flex-direction: column;
         position: relative;
-        @media (min-width: 760px) { 
+    
+         @media (min-width: 760px) { 
             width: 44%;
             
         }
-        
+        @media (min-width:1020px) {
+            height: 330px;
+
+        }
+        @media (min-width:1200px) {
+            width: 20%
+        }
+
         
         .box-photo{
             width: 100%;
             height: 180px;
             border-radius: 25px 25px 0 0 ;
             object-fit: cover;
+            @media (min-width:1020px) {
+                height: 250px;
+            }
+        
         }
         .new{
             border: 2px solid transparent;
@@ -294,6 +440,9 @@ header {
             display: flex;
             justify-content: space-between;
             height: 70px;
+            @media (min-width:1020px) {
+                height: 80px;
+            }
             .box-text{
                 font-size: .8rem;
                 padding-left: 10px;
@@ -314,8 +463,6 @@ header {
        
             
     
-           
-            
     }
                 
     .heart{
@@ -358,6 +505,10 @@ footer{
      padding-bottom: 20px;
      background-color: rgb(60,60,60);
      color: white;
+     @media (min-width:1020px) {
+         text-align: center;
+     }
+    
 
      .footer-logo{
          
@@ -365,12 +516,18 @@ footer{
          color: white;
          font-family: 'Shrikhand', sans-serif;
          font-weight: 100;
+         @media (min-width:1020px) {
+             font-size: 2rem;
+         }
      }
      .ul-icon{
          margin-left: 30px;
          padding-left: 0;
+
+     }
          li{
              line-height: 25px;
+             color: white;
              
          }
          .fa-ustensil{
@@ -381,4 +538,141 @@ footer{
          }
          
         }
-     }
+/**PAGE LA PALETTE DU GOUT**/
+header{
+    position: relative;
+    .fa-arrow{
+        position: absolute;
+        left: 20px;
+        bottom: 18px;
+    }
+}
+    
+
+.carte-resto{
+    display: flex;
+    flex-direction: column;
+    background-color: $gray-light;
+}
+.box-photo-menu{
+    margin: 0;
+    .photo-menu{
+        width: 100%;
+        object-fit: cover;
+        height: 250px;
+        z-index: 1;
+    }
+    .box-text-menu{
+        background-color: $gray-light;
+        height: 60px;
+        padding-top: 30px;
+        border: solid transparent;
+        border-radius: 30px 30px 0 0;
+        position: relative;
+        margin-top: -35px;
+        z-index: 2;
+        display: flex;
+        
+
+            .nom-resto{
+            margin: 0;
+            font-family: 'Shrikhand', sans-serif;
+            font-weight:normal;
+            font-size: 1.8rem;
+            margin-left: 15px;
+        }
+        
+
+    }
+}
+.section-type-plat{
+    
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    .titre-type-plat{
+        margin-top: 0;
+        font-size: 1rem;
+        font-weight: normal;
+        border-bottom: 3px solid $color-tertiary;
+        width: 10%;
+    }
+    .box-menu{
+        border: solid transparent;
+        border-radius: 15px;
+        background-color: white;
+        margin-bottom: 20px;
+        display: flex;
+        line-height: 25px;
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        @include box-shadow;
+        cursor: pointer;
+
+        .nom-plat{
+            margin: 0;
+            
+        }
+        .description-plat{
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .prix-menu{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            font-weight: bold;
+        }
+    }
+}
+
+.heart-menu{
+        
+    right: -25px;
+    top: 8px;
+    font-size: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    
+    &:hover{
+        .heart_2{
+            opacity: 1;
+        }
+    }
+}
+.heart_1{
+    position: absolute;
+    opacity: 1;
+}
+.heart_2{
+    position: absolute;
+    background:linear-gradient(100deg,$color-secondary,$color-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    transition: .5s; 
+    
+}
+.btn-commander{
+    display: block;
+    margin: auto;
+    border-radius: 30px;
+    padding: 12px 0px;
+    width: 50%;
+    color: white;
+    font-size: .9rem;
+    background: linear-gradient(175deg,$color-secondary,$color-primary);
+    border: transparent;
+    @include box-shadow-dark;
+    transition: all .5s;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    &:hover{
+        opacity: 0.85;
+        @include box-shadow-hover;
+    }
+}
+
