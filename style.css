@@ -94,6 +94,9 @@ li {
 a {
   text-decoration: none;
 }
+a:visited {
+  color: transparent;
+}
 
 header {
   width: 100%;
@@ -459,16 +462,23 @@ footer .footer-logo {
 }
 @media (min-width: 1020px) {
   footer .footer-logo {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 footer .ul-icon {
   margin-left: 30px;
   padding-left: 0;
+  color: white;
 }
-footer li {
+footer .li-footer {
   line-height: 25px;
   color: white;
+}
+@media (min-width: 1020px) {
+  footer .li-footer {
+    font-size: 1.2rem;
+    line-height: 30px;
+  }
 }
 footer .fa-ustensil {
   margin-right: 13px;
@@ -485,12 +495,20 @@ header .fa-arrow {
   position: absolute;
   left: 20px;
   bottom: 18px;
+  color: black;
 }
-
-.carte-resto {
-  display: flex;
-  flex-direction: column;
-  background-color: #f2f2f2;
+@media (min-width: 760px) {
+  header .fa-arrow {
+    bottom: 33px;
+    left: 50px;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1020px) {
+  header .fa-arrow {
+    font-size: 2rem;
+    bottom: 40px;
+  }
 }
 
 .box-photo-menu {
@@ -513,6 +531,11 @@ header .fa-arrow {
   z-index: 2;
   display: flex;
 }
+@media (min-width: 1020px) {
+  .box-photo-menu .box-text-menu {
+    padding-bottom: 30px;
+  }
+}
 .box-photo-menu .box-text-menu .nom-resto {
   margin: 0;
   font-family: "Shrikhand", sans-serif;
@@ -520,32 +543,74 @@ header .fa-arrow {
   font-size: 1.8rem;
   margin-left: 15px;
 }
+@media (min-width: 760px) {
+  .box-photo-menu .box-text-menu .nom-resto {
+    margin: auto;
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 1020px) {
+  .box-photo-menu .box-text-menu .nom-resto {
+    font-size: 3rem;
+  }
+}
+
+.carte-resto {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #f2f2f2;
+}
+@media (min-width: 1020px) {
+  .carte-resto {
+    flex-direction: row;
+  }
+}
 
 .section-type-plat {
-  margin-left: 15px;
-  margin-right: 15px;
   margin-top: 20px;
+}
+@media (min-width: 760px) {
+  .section-type-plat {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1020px) {
+  .section-type-plat {
+    width: 45%;
+  }
 }
 .section-type-plat .titre-type-plat {
   margin-top: 0;
+  margin-left: 15px;
   font-size: 1rem;
   font-weight: normal;
   border-bottom: 3px solid #99E2D0;
   width: 10%;
 }
 .section-type-plat .box-menu {
-  border: solid transparent;
   border-radius: 15px;
   background-color: white;
   margin-bottom: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
   display: flex;
   line-height: 25px;
-  position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
   padding-left: 5px;
   box-shadow: 2px 2px 10px 2px gainsboro;
   cursor: pointer;
+  overflow: hidden;
+}
+.section-type-plat .box-menu .box-menu-text {
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
 }
 .section-type-plat .box-menu .nom-plat {
   margin: 0;
@@ -555,10 +620,12 @@ header .fa-arrow {
   font-size: 0.9rem;
 }
 .section-type-plat .box-menu .prix-menu {
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   font-weight: bold;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .heart-menu {
@@ -567,6 +634,18 @@ header .fa-arrow {
   font-size: 1.5rem;
   position: relative;
   cursor: pointer;
+}
+@media (min-width: 760px) {
+  .heart-menu {
+    right: 165px;
+    top: 18px;
+  }
+}
+@media (min-width: 1020px) {
+  .heart-menu {
+    font-size: 2.5rem;
+    top: 14px;
+  }
 }
 .heart-menu:hover .heart_2 {
   opacity: 1;
@@ -587,7 +666,27 @@ header .fa-arrow {
   transition: 0.5s;
 }
 
-.btn-commander {
+.check-box {
+  background-color: #99E2D0;
+  width: 70px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -70px;
+}
+.check-box .check-icon {
+  color: white;
+  font-size: 1.5rem;
+  transform: rotate(180deg);
+}
+
+#btn-page-menu {
+  background-color: #f2f2f2;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+#btn-page-menu .btn-commander {
   display: block;
   margin: auto;
   border-radius: 30px;
@@ -599,12 +698,29 @@ header .fa-arrow {
   border: transparent;
   box-shadow: 2px 2px 10px 2px #aaaaaa;
   transition: all 0.5s;
-  margin-top: 30px;
-  margin-bottom: 50px;
 }
-.btn-commander:hover {
+@media (min-width: 760px) {
+  #btn-page-menu .btn-commander {
+    width: 30%;
+    height: 50px;
+  }
+}
+#btn-page-menu .btn-commander:hover {
   opacity: 0.85;
   box-shadow: 3px 3px 10px 3px gray;
+}
+
+@keyframes animation-box {
+  0% {
+    transform: translateX(0);
+    transform-origin: left;
+    background-color: #99E2D0;
+  }
+  50% {
+    transform: translateX(1);
+    transform-origin: left;
+    background-color: #99E2D0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

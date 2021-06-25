@@ -114,6 +114,9 @@ li {
 }
 a {
     text-decoration: none;
+    &:visited{
+        color:transparent;
+    }
     
 }
 header {
@@ -517,17 +520,22 @@ footer{
          font-family: 'Shrikhand', sans-serif;
          font-weight: 100;
          @media (min-width:1020px) {
-             font-size: 2rem;
+             font-size: 2.2rem;
          }
      }
      .ul-icon{
          margin-left: 30px;
          padding-left: 0;
+         color: white;
 
      }
-         li{
+         .li-footer{
              line-height: 25px;
              color: white;
+             @media (min-width:1020px) {
+                 font-size: 1.2rem;
+                 line-height: 30px;
+             }
              
          }
          .fa-ustensil{
@@ -545,15 +553,21 @@ header{
         position: absolute;
         left: 20px;
         bottom: 18px;
+        color: black;
+        @media (min-width:760px) {
+            bottom: 33px;
+            left: 50px;
+            font-size: 1.5rem;
+        }
+        @media  (min-width:1020px){
+            font-size: 2rem;
+            bottom: 40px;
+        }
     }
 }
     
 
-.carte-resto{
-    display: flex;
-    flex-direction: column;
-    background-color: $gray-light;
-}
+
 .box-photo-menu{
     margin: 0;
     .photo-menu{
@@ -572,7 +586,11 @@ header{
         margin-top: -35px;
         z-index: 2;
         display: flex;
+        @media  (min-width:1020px){
+            padding-bottom: 30px;
         
+        }
+       
 
             .nom-resto{
             margin: 0;
@@ -580,36 +598,85 @@ header{
             font-weight:normal;
             font-size: 1.8rem;
             margin-left: 15px;
+            @media (min-width:760px) {
+                margin: auto;
+                font-size: 2.3rem; 
+             }
+             @media  (min-width:1020px){
+                font-size: 3rem;
+            
+            }
         }
         
 
     }
 }
+
+.carte-resto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: $gray-light;
+    
+
+    @media (min-width:1020px) {
+        
+        flex-direction: row;
+        
+    }
+}
+
 .section-type-plat{
     
-    margin-left: 15px;
-    margin-right: 15px;
+
     margin-top: 20px;
+    
+    @media (min-width:760px) {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    @media (min-width:1020px) {
+        width: 45%;
+
+    }
+   
+    
     .titre-type-plat{
         margin-top: 0;
+        margin-left: 15px;
         font-size: 1rem;
         font-weight: normal;
         border-bottom: 3px solid $color-tertiary;
         width: 10%;
+       
+       
     }
     .box-menu{
-        border: solid transparent;
+    
         border-radius: 15px;
         background-color: white;
         margin-bottom: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
         display: flex;
         line-height: 25px;
-        position: relative;
-        padding-top: 10px;
-        padding-bottom: 10px;
+       
         padding-left: 5px;
         @include box-shadow;
         cursor: pointer;
+        overflow: hidden;
+       .box-menu-text{
+           width: 80%;
+           padding-top: 10px;
+           padding-bottom: 10px;
+           overflow: hidden;
+           white-space: nowrap;
+           text-overflow: ellipsis;
+           flex-grow: 1;
+       }
+           
+       
 
         .nom-plat{
             margin: 0;
@@ -618,12 +685,15 @@ header{
         .description-plat{
             margin: 0;
             font-size: 0.9rem;
+
         }
         .prix-menu{
-            position: absolute;
-            right: 20px;
-            bottom: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
             font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
     }
 }
@@ -635,6 +705,14 @@ header{
     font-size: 1.5rem;
     position: relative;
     cursor: pointer;
+    @media (min-width:760px) {
+        right: 165px;
+        top: 18px;
+    }
+    @media (min-width:1020px) {
+      font-size:2.5rem;
+      top: 14px;
+    }
     
     &:hover{
         .heart_2{
@@ -654,25 +732,66 @@ header{
     color: transparent;
     opacity: 0;
     transition: .5s; 
-    
+
 }
-.btn-commander{
-    display: block;
-    margin: auto;
-    border-radius: 30px;
-    padding: 12px 0px;
-    width: 50%;
-    color: white;
-    font-size: .9rem;
-    background: linear-gradient(175deg,$color-secondary,$color-primary);
-    border: transparent;
-    @include box-shadow-dark;
-    transition: all .5s;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    &:hover{
-        opacity: 0.85;
-        @include box-shadow-hover;
+
+.check-box{
+    background-color: #99E2D0;   
+    width: 70px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -70px;
+    .check-icon{
+        color: white;
+        font-size: 1.5rem;
+        transform: rotate(180deg);
     }
 }
+
+
+#btn-page-menu{
+    background-color: $gray-light;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    .btn-commander{
+        display: block;
+        margin: auto;
+        border-radius: 30px;
+        padding: 12px 0px;
+        width: 50%;
+        color: white;
+        font-size: .9rem;
+        background: linear-gradient(175deg,$color-secondary,$color-primary);
+        border: transparent;
+        @include box-shadow-dark;
+        transition: all .5s;
+        @media (min-width:760px) {
+            width: 30%;
+            height: 50px;
+        }
+       
+        
+        &:hover{
+            opacity: 0.85;
+            @include box-shadow-hover;
+        }
+    }
+}
+@keyframes animation-box {
+  0%{
+        transform: translateX(0) ;
+        transform-origin: left;
+        background-color: $color-tertiary;
+}
+50%{
+    transform: translateX(1) ;
+    transform-origin: left;
+    background-color: $color-tertiary;
+}
+
+
+}
+
 
