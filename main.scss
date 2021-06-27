@@ -28,12 +28,12 @@ $gray-medium:rgba(230,230,230);
     visibility: hidden;
     .lettre{
         color: #484848;
-        font-size: 4rem;
+        font-size: 2rem;
         font-weight: bolder;
         font-family: 'Shrikhand', sans-serif;
         letter-spacing: 15px;
         margin-bottom: 150px;
-        animation: loading 1.2s 0.5s linear infinite ;
+        animation: loading 1.2s  linear infinite ;
         
 
      }
@@ -630,7 +630,10 @@ header{
     
 
     margin-top: 20px;
+    animation: animation-box 1.5s ease-in-out both ;
     
+    opacity: 0;
+
     @media (min-width:760px) {
         width: 80%;
         margin: auto;
@@ -640,7 +643,7 @@ header{
         width: 45%;
 
     }
-   
+}
     
     .titre-type-plat{
         margin-top: 0;
@@ -653,7 +656,7 @@ header{
        
     }
     .box-menu{
-    
+        max-width:100% ;
         border-radius: 15px;
         background-color: white;
         margin-bottom: 20px;
@@ -661,31 +664,67 @@ header{
         margin-right: 15px;
         display: flex;
         line-height: 25px;
-       
-        padding-left: 5px;
+       padding-left: 5px;
         @include box-shadow;
         cursor: pointer;
         overflow: hidden;
-       .box-menu-text{
-           width: 80%;
+        
+    
+        &:hover{
+            .check-box{
+                margin-right: 0;
+            }
+            .check-icon{
+                transform: rotate(0deg);
+            }
+        }
+    }
+        
+
+        .check-box{
+            background-color: #99E2D0;   
+            width: 70px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: -70px;
+            transition: .5s;
+            
+        
+        .check-icon{
+                color: white;
+                font-size: 1.5rem;
+                transform: rotate(-360deg);
+                transition: .5s;
+               
+            }
+        }
+
+       
+        .box-menu-text{
+           width: 200px;
            padding-top: 10px;
            padding-bottom: 10px;
-           overflow: hidden;
-           white-space: nowrap;
-           text-overflow: ellipsis;
            flex-grow: 1;
+          
        }
            
-       
+     
+    
 
         .nom-plat{
             margin: 0;
-            
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; 
         }
         .description-plat{
             margin: 0;
             font-size: 0.9rem;
-
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         .prix-menu{
             display: flex;
@@ -695,8 +734,8 @@ header{
             margin-right: 10px;
             margin-bottom: 10px;
         }
-    }
-}
+    
+    
 
 .heart-menu{
         
@@ -735,20 +774,6 @@ header{
 
 }
 
-.check-box{
-    background-color: #99E2D0;   
-    width: 70px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: -70px;
-    .check-icon{
-        color: white;
-        font-size: 1.5rem;
-        transform: rotate(180deg);
-    }
-}
 
 
 #btn-page-menu{
@@ -780,18 +805,27 @@ header{
     }
 }
 @keyframes animation-box {
-  0%{
-        transform: translateX(0) ;
-        transform-origin: left;
-        background-color: $color-tertiary;
-}
-50%{
-    transform: translateX(1) ;
-    transform-origin: left;
-    background-color: $color-tertiary;
-}
+    0%{
+     opacity: 0;
+    transform-origin: bottom top;    
+
+    }
+   
+    100%{
+
+    opacity: 1;
+    transform-origin: bottom top;    
+    
+    }
 
 
 }
-
-
+.section-type-plat :nth-child(1){
+    animation-delay: .2s;
+}
+.section-type-plat:nth-child(2){
+    animation-delay: .4s;
+}
+.section-type-plat:nth-child(3){
+    animation-delay: .8s;
+}
