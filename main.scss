@@ -35,7 +35,7 @@ $gray-medium:rgba(230,230,230);
         margin-bottom: 150px;
         justify-content: center;
         align-items: center;
-        animation: loading 1.2s  linear infinite ;
+        animation: loading 1.2s 0.5s linear infinite ;
         @media (min-width:1020px) {
             font-size: 4rem;
         }
@@ -123,10 +123,11 @@ li {
 }
 a {
     text-decoration: none;
+    color: black;
     &:visited{
-        color:transparent;
+        color:black;
     }
-    
+   
 }
 header {
     width: 100%;
@@ -454,19 +455,24 @@ header {
             display: flex;
             justify-content: space-between;
             height: 70px;
+            color: black;
+            margin-top: -5px;
             @media (min-width:1020px) {
                 height: 80px;
             }
             .box-text{
                 font-size: .8rem;
                 padding-left: 10px;
+                
                 h2{
                     margin-top: 10px;
                     margin-bottom: 0px;
+                    
                 }
                 p{
                     margin-top: 5px;
                     font-size: 1rem;
+                    
                 }
 
               
@@ -844,14 +850,14 @@ header{
 @keyframes animation-box {
     0%{
      opacity: 0;
-    transform-origin: bottom top;    
+      
 
     }
    
     100%{
 
     opacity: 1;
-    transform-origin: bottom top;    
+     
     
     }
 

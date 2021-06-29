@@ -20,7 +20,7 @@
   margin-bottom: 150px;
   justify-content: center;
   align-items: center;
-  animation: loading 1.2s linear infinite;
+  animation: loading 1.2s 0.5s linear infinite;
 }
 @media (min-width: 1020px) {
   .loader .lettre {
@@ -105,9 +105,10 @@ li {
 
 a {
   text-decoration: none;
+  color: black;
 }
 a:visited {
-  color: transparent;
+  color: black;
 }
 
 header {
@@ -411,6 +412,8 @@ header .header-logo {
   display: flex;
   justify-content: space-between;
   height: 70px;
+  color: black;
+  margin-top: -5px;
 }
 @media (min-width: 1020px) {
   .box .box-description {
@@ -777,11 +780,9 @@ header .fa-arrow {
 @keyframes animation-box {
   0% {
     opacity: 0;
-    transform-origin: bottom top;
   }
   100% {
     opacity: 1;
-    transform-origin: bottom top;
   }
 }
 .section-type-plat :nth-child(1) {
