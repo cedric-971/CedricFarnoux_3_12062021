@@ -512,6 +512,26 @@ footer .fa-helping {
 }
 
 /**PAGE MENUS RESTAURANTS**/
+@keyframes animation-box {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.section-type-plat :nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.section-type-plat:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.section-type-plat:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
 header {
   position: relative;
 }
@@ -547,6 +567,7 @@ header .fa-arrow {
 @media (min-width: 1200px) {
   .box-photo-menu .photo-menu {
     border-radius: 20px;
+    height: 350px;
   }
 }
 .box-photo-menu .box-text-menu {
@@ -560,7 +581,7 @@ header .fa-arrow {
   z-index: 2;
   display: flex;
 }
-@media (min-width: 1020px) {
+@media (min-width: 760px) {
   .box-photo-menu .box-text-menu {
     padding-bottom: 30px;
   }
@@ -581,6 +602,7 @@ header .fa-arrow {
   .box-photo-menu .box-text-menu .nom-resto {
     margin: auto;
     font-size: 2.3rem;
+    padding-bottom: 50px;
   }
 }
 @media (min-width: 1020px) {
@@ -627,6 +649,11 @@ header .fa-arrow {
   font-weight: normal;
   border-bottom: 3px solid #99E2D0;
   width: 10%;
+}
+@media (min-width: 760px) {
+  .titre-type-plat {
+    font-size: 1.4rem;
+  }
 }
 
 .box-menu {
@@ -775,26 +802,6 @@ header .fa-arrow {
 #btn-page-menu .btn-commander:hover {
   opacity: 0.85;
   box-shadow: 3px 3px 10px 3px gray;
-}
-
-@keyframes animation-box {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.section-type-plat :nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.section-type-plat:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.section-type-plat:nth-child(3) {
-  animation-delay: 0.8s;
 }
 
 /*# sourceMappingURL=style.css.map */

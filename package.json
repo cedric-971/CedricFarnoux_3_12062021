@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./main.scss:./style.css",
+    "prefix": "postcss ./style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedric-971/CedricFarnoux_3_12062021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist":"last 4 versions",
+  "bugs": {
+    "url": "https://github.com/cedric-971/CedricFarnoux_3_12062021/issues"
+  },
+  "homepage": "https://github.com/cedric-971/CedricFarnoux_3_12062021#readme"
+}
+
